@@ -1,6 +1,6 @@
 {
     "name": "filea",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Get the mime type of a file.",
     "repository": "https://github.com/Richienb/filea.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",

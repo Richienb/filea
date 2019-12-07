@@ -1,13 +1,7 @@
 import test from "ava"
-import theModule from "."
+import filea from "."
 
-test("main", (t) => {
-    t.throws(() => {
-        theModule(123)
-    }, {
-        instanceOf: TypeError,
-        message: "Expected a string, got number",
-    })
-
-    t.is(theModule("unicorns"), "unicorns & rainbows")
+test("main", async (t) => {
+    t.is(await filea("test/image.png"), "image/png")
+    t.is(filea.sync("test/image.png"), "image/png")
 })

@@ -1,7 +1,16 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-    if (typeof input !== "string") throw new TypeError(`Expected a string, got ${typeof input}`)
+const fileType = require("file-type")
+const readChunk = require("read-chunk")
 
-    return `${input} & ${postfix}`
+module.exports = async (filename) => {
+    if (typeof filename !== "string") throw new TypeError("filename is not a string!")
+
+    return fileType(await readChunk(filename, 0, fileType.minimumBytes)).mime
+}
+
+module.exports.sync = (filename) => {
+    if (typeof filename !== "string") throw new TypeError("filename is not a string!")
+
+    return fileType(readChunk.sync(filename, 0, fileType.minimumBytes)).mime
 }

@@ -1,41 +1,34 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Filea [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/filea/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/filea)
 
-My awesome module.
+Get the mime type of a file.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/filea.png)](https://npmjs.com/package/filea)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install filea
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const filea = require("filea");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+    await filea("image.png")
+    //=> image/png
+})()
 ```
 
 ## API
 
-### theModule(input, options?)
+### filea(filename)
 
-#### input
+### filea.sync(filename)
+
+#### filename
 
 Type: `string`
 
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The file to get the mime type for.
